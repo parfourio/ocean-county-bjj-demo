@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ocean County BJJ — Forked River, NJ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #003085;
+      --blue-mid: #00419e;
+      --blue-light: #0050c0;
+      --blue-pale: #e8eef8;
+      --black: #0a0a0a;
+      --dark: #111112;
+      --dark2: #1a1a1b;
+      --white: #ffffff;
+      --off-white: #f5f5f5;
+      --text-mid: #666;
+      --text-light: #999;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); }
+
+    /* ── OUTREACH BANNER ── */
+    .outreach-banner {
+      background: linear-gradient(135deg, #b8860b 0%, #c9a84c 50%, #debb6a 100%);
+      color: #1a1200;
+      padding: 13px 24px;
+      text-align: center;
+      font-size: 0.86rem;
+      font-weight: 500;
+      line-height: 1.5;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .outreach-banner strong { font-weight: 700; }
+    .outreach-banner a.reply-btn {
+      display: inline-block;
+      margin-left: 14px;
+      background: var(--blue);
+      color: var(--white);
+      padding: 6px 16px;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+    }
+    .outreach-banner a.reply-btn:hover { background: var(--blue-mid); }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--black);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      line-height: 1;
+    }
+    .logo span { color: var(--blue-light); }
+    .logo-sub {
+      font-size: 0.58rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue) !important;
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 3px;
+    }
+    .nav-cta:hover { background: var(--blue-mid) !important; }
+    .nav-phone {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      font-weight: 500;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--black);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,48,133,0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-bg-text {
+      position: absolute;
+      right: -30px;
+      bottom: -60px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28rem;
+      color: rgba(0,48,133,0.06);
+      line-height: 1;
+      pointer-events: none;
+      letter-spacing: -0.02em;
+    }
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(0,80,192,0.4);
+      color: rgba(100,150,255,0.9);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.8rem, 8vw, 7.5rem);
+      line-height: 0.92;
+      letter-spacing: 0.03em;
+      margin-bottom: 28px;
+      max-width: 800px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--blue-light);
+      display: block;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      max-width: 520px;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: 15px 32px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7);
+      padding: 15px 28px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: border-color 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+    }
+    .hero-stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: var(--blue-light);
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+    .hero-stat-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    /* ── STRIP ── */
+    .blue-strip {
+      background: var(--blue);
+      padding: 16px 48px;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .strip-item {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .strip-item::before { content: '▸'; font-size: 0.6rem; }
+
+    /* ── PROGRAMS ── */
+    .section { padding: 96px 48px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 0.04em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.8;
+      max-width: 540px;
+      margin-bottom: 52px;
+      font-weight: 300;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .program-card {
+      background: var(--dark2);
+      padding: 40px 32px;
+      position: relative;
+      transition: background 0.2s;
+      overflow: hidden;
+    }
+    .program-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .program-card:hover { background: #1e1e20; }
+    .program-card:hover::after { transform: scaleX(1); }
+    .program-icon { font-size: 2rem; margin-bottom: 16px; }
+    .program-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .program-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .program-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      border: 1px solid rgba(0,80,192,0.4);
+      padding: 4px 10px;
+    }
+
+    /* ── WHY ── */
+    .why-section { background: var(--dark2); }
+    .why-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 96px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .why-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .why-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--blue-light);
+      line-height: 1;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      width: 40px;
+    }
+    .why-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .why-text p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .why-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .why-block {
+      background: var(--dark);
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .why-block.blue { background: var(--blue); }
+    .why-block-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--blue-light);
+    }
+    .why-block.blue .why-block-num { color: rgba(255,255,255,0.9); }
+    .why-block-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-top: 6px;
+    }
+    .why-block.blue .why-block-label { color: rgba(255,255,255,0.7); }
+
+    /* ── REVIEWS ── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+    }
+    .review-card {
+      background: var(--dark2);
+      padding: 36px 30px;
+    }
+    .stars { color: var(--blue-light); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 16px; }
+    .review-text {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    .review-author { font-weight: 700; font-size: 0.85rem; color: var(--white); }
+    .review-date { font-size: 0.72rem; color: rgba(255,255,255,0.25); margin-top: 2px; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--blue);
+      padding: 80px 48px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 500px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      background: var(--white);
+      color: var(--blue);
+      padding: 15px 32px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.2s;
+    }
+    .btn-white:hover { background: var(--off-white); }
+    .btn-outline-white {
+      border: 2px solid rgba(255,255,255,0.5);
+      color: var(--white);
+      padding: 13px 28px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: border-color 0.2s;
+    }
+    .btn-outline-white:hover { border-color: var(--white); }
+
+    /* ── LOCATION ── */
+    .location-section {
+      background: var(--dark);
+      padding: 64px 48px;
+      display: flex;
+      justify-content: center;
+    }
+    .location-inner {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      gap: 80px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .location-info { flex: 1; min-width: 260px; }
+    .location-info .section-label { margin-bottom: 16px; }
+    .location-detail {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+    .location-detail span:first-child { color: var(--blue-light); font-size: 1rem; flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060606;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 40px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: var(--white); }
+    .footer-logo span { color: var(--blue-light); }
+    .footer-legal { font-size: 0.7rem; color: rgba(255,255,255,0.15); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-inner { padding: 60px 20px; }
+      .hero-bg-text { display: none; }
+      .section { padding: 64px 20px; }
+      .programs-grid { grid-template-columns: 1fr; }
+      .why-inner { grid-template-columns: 1fr; gap: 40px; padding: 64px 20px; }
+      .blue-strip { padding: 14px 20px; gap: 20px; }
+      .cta-section { padding: 60px 20px; }
+      .location-section { padding: 48px 20px; }
+      footer { padding: 32px 20px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- OUTREACH BANNER -->
+  <div class="outreach-banner">
+    <strong>Hey OCBJJ</strong> — I found your site and put together this free concept redesign. No pitch, just want to know what you think.
+    <a class="reply-btn" href="mailto:info@oceancountybjj.com?subject=Re%3A%20Concept%20Website%20for%20Ocean%20County%20BJJ&body=Hi%20Scott%2C%0A%0AI%20checked%20out%20the%20concept%20site...">Reply to Scott →</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div>
+      <div class="logo">OC<span>BJJ</span></div>
+      <div class="logo-sub">Ocean County Brazilian Jiu-Jitsu</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Programs</a></li>
+      <li><a href="#">Adults</a></li>
+      <li><a href="#">Kids</a></li>
+      <li><a href="#">Schedule</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#" class="nav-cta">Free First Class</a></li>
+    </ul>
+    <div class="nav-phone">(848) 992-2028</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-bg-text">BJJ</div>
+    <div class="hero-inner">
+      <div class="hero-badge">Forked River, NJ · Lacey Township · GSP Exit 74</div>
+      <h1>Learn to<br/><em>Defend.</em><br/>Train to<br/><em>Dominate.</em></h1>
+      <p class="hero-sub">Authentic Brazilian Jiu-Jitsu instruction for all levels — kids and adults. Whether you're here for self-defense, fitness, or competition, we have a place for you on the mat.</p>
+      <div class="hero-actions">
+        <a href="tel:8489922028" class="btn-primary">Secure Your First Class</a>
+        <a href="#" class="btn-outline">View Programs →</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">All</div>
+          <div class="hero-stat-label">Experience Levels Welcome</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">Kids</div>
+          <div class="hero-stat-label">& Adult Programs</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">BJJ</div>
+          <div class="hero-stat-label">Kickboxing · MMA · Fitness</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">NJ</div>
+          <div class="hero-stat-label">Ocean County's Premier Academy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="blue-strip">
+    <div class="strip-item">Brazilian Jiu-Jitsu</div>
+    <div class="strip-item">Kickboxing</div>
+    <div class="strip-item">MMA Training</div>
+    <div class="strip-item">Kids Programs</div>
+    <div class="strip-item">Self-Defense</div>
+    <div class="strip-item">Weight Loss & Fitness</div>
+  </div>
+
+  <!-- PROGRAMS -->
+  <section class="section" style="background: var(--black);">
+    <div class="section-inner">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Programs For Every Goal.</h2>
+      <p class="section-sub">From your first day on the mat to competition prep — we have a program built for where you are and where you want to go.</p>
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="program-icon">🥋</div>
+          <h3>Brazilian Jiu-Jitsu</h3>
+          <p>The same effective techniques the Gracie family used to dominate MMA — taught in a structured, beginner-friendly environment. The most practical martial art you can learn.</p>
+          <div class="program-tag">All Levels</div>
+        </div>
+        <div class="program-card">
+          <div class="program-icon">🥊</div>
+          <h3>Kickboxing</h3>
+          <p>High-energy striking classes that build cardiovascular endurance, real-world self-defense skills, and burn serious calories. No prior experience needed.</p>
+          <div class="program-tag">Adults</div>
+        </div>
+        <div class="program-card">
+          <div class="program-icon">⚡</div>
+          <h3>MMA Training</h3>
+          <p>Combine striking, wrestling, and grappling into a complete skill set. Structured training for competitors and serious practitioners who want the full picture.</p>
+          <div class="program-tag">Intermediate+</div>
+        </div>
+        <div class="program-card">
+          <div class="program-icon">👦</div>
+          <h3>Kids Program</h3>
+          <p>BJJ builds confidence, discipline, and the ability to handle pressure — on and off the mat. A structured environment where kids learn to respect themselves and others.</p>
+          <div class="program-tag">Ages 4–15</div>
+        </div>
+        <div class="program-card">
+          <div class="program-icon">🛡️</div>
+          <h3>Self-Defense</h3>
+          <p>Real techniques for real situations. Learn how to stay safe and handle conflict confidently — skills that stick with you for life, built from proven BJJ principles.</p>
+          <div class="program-tag">All Levels</div>
+        </div>
+        <div class="program-card">
+          <div class="program-icon">💪</div>
+          <h3>Fitness & Weight Loss</h3>
+          <p>Training that doesn't feel like a gym. Martial arts classes improve mobility, flexibility, and burn more calories than you'd expect — with a community that keeps you coming back.</p>
+          <div class="program-tag">All Levels</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TRAIN HERE -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div>
+        <div class="section-label">Why OCBJJ</div>
+        <h2 class="section-title">World Class Instruction. Real Results.</h2>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-num">01</div>
+            <div class="why-text">
+              <h4>All Walks of Life Welcome</h4>
+              <p>Beginners train side by side with experienced practitioners. No one gets left behind, no one gets made to feel out of place. That's the culture here.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">02</div>
+            <div class="why-text">
+              <h4>Instruction From Champions</h4>
+              <p>Learn from world-class instructors who have competed and won at the highest levels. Their experience is your advantage from day one.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">03</div>
+            <div class="why-text">
+              <h4>Your Goals, Our Focus</h4>
+              <p>We separate competition from class. Whether you want to lose weight, learn self-defense, or compete — we build a path around what you want to achieve.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">04</div>
+            <div class="why-text">
+              <h4>Convenient Location</h4>
+              <p>Located in Forked River, just 1.5 miles from GSP Exit 74 in Lacey Township. Easy to get to — no excuse not to show up.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual">
+        <div class="why-block blue">
+          <div class="why-block-num">BJJ</div>
+          <div class="why-block-label">Authentic Instruction</div>
+        </div>
+        <div class="why-block">
+          <div class="why-block-num" style="color:var(--blue-light);">100%</div>
+          <div class="why-block-label">Goal Guarantee</div>
+        </div>
+        <div class="why-block">
+          <div class="why-block-num" style="color:var(--blue-light);">All</div>
+          <div class="why-block-label">Ages & Levels</div>
+        </div>
+        <div class="why-block blue">
+          <div class="why-block-num">NJ</div>
+          <div class="why-block-label">Ocean County's Best</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" style="background: var(--black);">
+    <div class="section-inner">
+      <div class="section-label">What Members Say</div>
+      <h2 class="section-title">Real People. Real Results.</h2>
+      <p class="section-sub">Don't take our word for it — hear from the members who train here every week.</p>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Can't wait to go back! The atmosphere is absolutely brilliant — everyone is welcoming and the instruction is top notch."</p>
+          <div class="review-author">Carlos Z.</div>
+          <div class="review-date">Ocean County Member</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Absolutely one of the best martial arts schools in the country. Proud to have trained there — the level of instruction is something else."</p>
+          <div class="review-author">Luis Alvarado</div>
+          <div class="review-date">Ocean County Member</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"I came in with zero experience and left feeling more confident than I ever have. The coaches meet you exactly where you are."</p>
+          <div class="review-author">Ocean County Member</div>
+          <div class="review-date">Verified Google Review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Your First Class Is On Us.</h2>
+    <p>Beginner classes enrolling now. Come see what the mat feels like — no experience, no commitment, no pressure.</p>
+    <div class="cta-actions">
+      <a href="tel:8489922028" class="btn-white">Call (848) 992-2028</a>
+      <a href="mailto:info@oceancountybjj.com" class="btn-outline-white">Email Us</a>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location-section">
+    <div class="location-inner">
+      <div class="location-info">
+        <div class="section-label">Find Us</div>
+        <div class="location-detail"><span>📍</span><span>336 Lacey Road, Forked River, NJ 08731<br/>Lacey Township · 1.5 miles from GSP Exit 74</span></div>
+        <div class="location-detail"><span>📞</span><span>(848) 992-2028</span></div>
+        <div class="location-detail"><span>✉️</span><span>info@oceancountybjj.com</span></div>
+        <div class="location-detail"><span>🎁</span><span>Gift cards available — call to order</span></div>
+      </div>
+      <div style="flex:1; min-width:260px;">
+        <a href="#" class="btn-primary" style="display:inline-block; margin-bottom:12px;">Secure Your First Class →</a>
+        <p style="font-size:0.8rem; color:rgba(255,255,255,0.3); margin-top:8px;">Beginner classes enrolling right now. All ages and experience levels welcome.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">OC<span>BJJ</span> — Ocean County Brazilian Jiu-Jitsu</div>
+    </div>
+    <div class="footer-legal">© 2026 Ocean County BJJ · Forked River, NJ · Concept design by Par4 Technology Solutions</div>
+  </footer>
+
+</body>
+</html>
